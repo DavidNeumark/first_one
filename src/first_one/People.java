@@ -13,8 +13,8 @@ import java.util.List;
 public class People {
 	public static void main(String[] args) {
 
-			LocalDate start = LocalDate.parse("1996-01-01"),
-			          end   = LocalDate.parse("2002-01-01");
+			LocalDate start = LocalDate.parse("1996-01-01");
+			LocalDate end   = LocalDate.parse("1997-01-01");
 			
 			// vendas e' a lista que deve ser analizada
 			List<Client> vendas = new ArrayList<Client>();
@@ -78,7 +78,9 @@ public class People {
 				}
 			}
 			
-			System.out.println(melhor_dia_da_semana + ", " + day);
+			System.out.println("O melhor dia do mes foi: " + melhor_dia_da_semana);
+			System.out.println("O melhor dia foi: " + day);
+			System.out.println("-----------------------");
 			
 			// vamos descobrir o mes do ano com mais visitas
 			for (Client client : vendas) {
@@ -134,6 +136,11 @@ public class People {
 					month = i + 1;
 				}
 			}
-			System.out.println(melhor_mes_do_ano + ", " + month);
+			System.out.println("O melhor mes do ano foi: " + melhor_mes_do_ano);
+			System.out.println("O melhor mes foi: " + month);
+			System.out.println("-----------------------");
+			
+			
+			
 	}
 }
