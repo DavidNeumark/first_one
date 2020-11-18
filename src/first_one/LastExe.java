@@ -16,12 +16,9 @@ public class LastExe {
 		    	temp.add(a);
 		    
 		}
-//		System.out.println(Arrays.toString(temp));
 		for (int i = 0; i < numberString.length() + 1; i++) {
 			if( temp.get(i) < 5) {
-//				int tm = temp.get(i);
 				temp.add(i, 5);
-//				temp.add(i++, tm);
 				
 				break;
 			}
