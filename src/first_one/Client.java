@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Client {
 	
-	private int visitas;
+	int visitas;
 	private LocalDate data;
 	
 	public int getVisitas() {
