@@ -9,27 +9,52 @@ public class LastExe {
 		
 		String numberString = Integer.toString(N);
 		List<Integer> temp = new ArrayList<Integer>();
+		boolean flag = true;
 
 		for (int i = 0; i < numberString.length(); i++){
 		    char c = numberString.charAt(i);
-		    int a = Character.getNumericValue(c);
+		    if( c == '-' ) {
+		    	flag = false;
+		    } else {
+			    int a = Character.getNumericValue(c);
 		    	temp.add(a);
-		    
+		    }
 		}
-		for (int i = 0; i < numberString.length() + 1; i++) {
-			if( temp.get(i) < 5) {
-				temp.add(i, 5);
-				
-				break;
+		
+		if( flag == true) {
+			for (int i = 0; i < numberString.length() + 1; i++) {
+				if( temp.get(i) < 5) {
+					temp.add(i, 5);
+					
+					break;
+				}
 			}
+//			System.out.println(temp.toString());
+			
+			N = 0;
+			
+			for (Integer i : temp) { 
+			    N = 10 * N + i;
+			}
+		} else {
+			for (int i = 0; i < numberString.length() + 1; i++) {
+				if( temp.get(i) > 5) {
+					temp.add(i, 5);
+					
+					break;
+				}
+			}
+//			System.out.println(temp.toString());
+			
+			N = 0;
+			
+			for (Integer i : temp) { 
+			    N = 10 * N + i;
+			}
+			N =  N * -1;
+			flag = true;
 		}
-//		System.out.println(temp.toString());
 		
-		N = 0;
-		
-		for (Integer i : temp) { 
-		    N = 10 * N + i;
-		}
 		System.out.println(N);
 		return N;
 	}
@@ -40,6 +65,7 @@ public class LastExe {
 		max.solution(670);
 		max.solution(268);
 		max.solution(0);
+		max.solution(-499);
 	}
 
 }
