@@ -47,9 +47,11 @@ public class Prova {
 		int[] distinct = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 		System.out.println("distinct before => " + Arrays.toString(distinct));
 		
+		// temporary lists:
 		List<Integer> list = new ArrayList<Integer>();
 		List<Integer> t = new ArrayList<Integer>();
 		
+		// populate t with all nums1 and nums2 elements
 		for (int i = 0; i < 15; i++) {
 			t.add(nums1[i]);
 		}
@@ -57,13 +59,14 @@ public class Prova {
 			t.add(nums2[i]);
 		}
 		
+		// remove duplicates and add them on list
         for (int element : t) { 
-        	  
             if (!list.contains(element)) { 
                 list.add(element); 
             } 
         } 
-		
+        
+		// add the unic elements of nums1 and nums2 on distinct
 		for (int i = 0; i < distinct.length; i++) {
 			if(i <= list.size() && i < list.size()) {
 				distinct[i] = list.get(i);
@@ -72,6 +75,8 @@ public class Prova {
 		
 		System.out.println("distinct after => " + Arrays.toString(distinct));
 		
+		// print the number of distinct without the -1s
+		// list contains all the ints of distinct but without the -1s
         Integer[] arr = new Integer[list.size()]; 
         arr = list.toArray(arr); 
         int[] array = new int[arr.length];
@@ -79,6 +84,7 @@ public class Prova {
 			array[i] = (int) arr[i];
 		}
         
+        // convert the list to String using IntSteam
 		String s = String.join("", IntStream.of(array).mapToObj(String::valueOf).toArray(String[]::new));
 		System.out.println("the number is => " + s);
 	}
