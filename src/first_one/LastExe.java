@@ -25,14 +25,11 @@ public class LastExe {
 			for (int i = 0; i < numberString.length() + 1; i++) {
 				if( temp.get(i) < 5) {
 					temp.add(i, 5);
-					
 					break;
 				}
 			}
-//			System.out.println(temp.toString());
 			
 			N = 0;
-			
 			for (Integer i : temp) { 
 			    N = 10 * N + i;
 			}
@@ -40,14 +37,11 @@ public class LastExe {
 			for (int i = 0; i < numberString.length() + 1; i++) {
 				if( temp.get(i) > 5) {
 					temp.add(i, 5);
-					
 					break;
 				}
 			}
-//			System.out.println(temp.toString());
 			
 			N = 0;
-			
 			for (Integer i : temp) { 
 			    N = 10 * N + i;
 			}

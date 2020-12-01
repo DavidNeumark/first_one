@@ -51,7 +51,6 @@ public class Bicycles {
 //		int[] arr3 = new int[100_001];
 		int[] arr4 = {5};
 		
-				
 		Bicycles check = new Bicycles();
 		check.solution(racks1);
 		check.solution(racks2);

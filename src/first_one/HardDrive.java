@@ -37,7 +37,7 @@ public class HardDrive {
 				
 			// other
 			} else if(string.matches(".* \\d*$") ) {
-				string = string.replaceAll(".*\\D+.*\\s","");
+				string = string.replaceAll(".*\\s","");
 				int memory = Integer.parseInt(string);
 				other = other + memory;
 				
