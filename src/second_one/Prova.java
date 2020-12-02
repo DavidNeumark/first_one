@@ -2,10 +2,10 @@ package second_one;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import java.util.stream.IntStream;
+
+//import com.sun.tools.javac.util.ArrayUtils;
 
 public class Prova {
 	
@@ -44,48 +44,65 @@ public class Prova {
 		
 		// --------------------
 		
-		int[] distinct = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-		System.out.println("distinct before => " + Arrays.toString(distinct));
 		
 		// temporary lists:
-		List<Integer> list = new ArrayList<Integer>();
 		List<Integer> t = new ArrayList<Integer>();
+		List<Integer> t2 = new ArrayList<Integer>();
+		List<Integer> t3 = new ArrayList<Integer>();
 		
-		// populate t with all nums1 and nums2 elements
-		for (int i = 0; i < 15; i++) {
-			t.add(nums1[i]);
-		}
-		for (int i = 0; i < 15; i++) {
-			t.add(nums2[i]);
-		}
-		
-		// remove duplicates and add them on list
-        for (int element : t) { 
-            if (!list.contains(element)) { 
-                list.add(element); 
-            } 
-        } 
-        
-		// add the unic elements of nums1 and nums2 on distinct
-		for (int i = 0; i < distinct.length; i++) {
-			if(i <= list.size() && i < list.size()) {
-				distinct[i] = list.get(i);
+		// remove duplicate and store then on t
+		for (int i = 0; i < nums1.length; i++) {
+			if (!t.contains(nums1[i])) {
+				t.add(nums1[i]);
 			}
+		}
+		
+		// remove duplicate and store then on t2
+		for (int i = 0; i < nums2.length; i++) {
+			if (!t2.contains(nums2[i])) {
+				t2.add(nums2[i]);
+			}
+		}
+		
+		// get the unique value of t
+		for (Integer integer : t) {
+			boolean check = false;
+			for (Integer integer2 : t2) {
+				if(integer == integer2)
+					check = true;
+			}
+			if(!check)
+				t3.add(integer);
+		}
+		
+		// get the unique value of t2
+		for (Integer integer : t2) {
+			boolean check = false;
+			for (Integer integer2 : t) {
+				if(integer == integer2)
+					check = true;
+			}
+			if(!check)
+				t3.add(integer);
+		}
+		// temporary array nums33
+		int[] nums33 = new int[t3.size()];
+		
+		// popu;ate nums33 with t3 values (those are the unique values of the to lists
+		for (int i = 0; i < t3.size(); i++) {
+			nums33[i] = t3.get(i);
+		}
+		
+		int[] distinct = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+		
+		for (int i = 0; i < nums33.length; i++) {
+			distinct[i] = nums33[i];
 		}
 		
 		System.out.println("distinct after => " + Arrays.toString(distinct));
 		
-		// print the number of distinct without the -1s
-		// list contains all the ints of distinct but without the -1s
-        Integer[] arr = new Integer[list.size()]; 
-        arr = list.toArray(arr); 
-        int[] array = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-			array[i] = (int) arr[i];
-		}
-        
         // convert the list to String using IntSteam
-		String s = String.join("", IntStream.of(array).mapToObj(String::valueOf).toArray(String[]::new));
+		String s = String.join("", IntStream.of(nums33).mapToObj(String::valueOf).toArray(String[]::new));
 		System.out.println("the number is => " + s);
 	}
 
