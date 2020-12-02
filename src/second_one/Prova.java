@@ -88,11 +88,12 @@ public class Prova {
 		// temporary array nums33
 		int[] nums33 = new int[t3.size()];
 		
-		// popu;ate nums33 with t3 values (those are the unique values of the to lists
+		// populate nums33 with t3 values (those are the unique values of the to lists
 		for (int i = 0; i < t3.size(); i++) {
 			nums33[i] = t3.get(i);
 		}
 		
+		// create distinct
 		int[] distinct = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 		
 		for (int i = 0; i < nums33.length; i++) {
