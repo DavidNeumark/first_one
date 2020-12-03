@@ -63,13 +63,13 @@ public class Test {
 	public static void main(String[] args) {
 		
 		int num = (int)(Math.random() * 32);
-//		int[] list = {4,5};
+		int[] list = {3,4};
 		
 		Test test = new Test();
 		System.out.println("Numero secreto: " + num);
 		int[] c = test.helper(num);
 		
-		test.solution(c);
+		test.solution(list);
 	}
 }
 
